@@ -19,8 +19,15 @@ class QuestionsController < ApplicationController
 
   def destroy
   	@question = Question.find(params[:id])
-  	@question.destroy
-  	  
+  	@question.destroy 	  
+  end
+
+  def show
+  	@question = Question.find(params[:id])
+  end
+
+  def index
+  	@question = Question.all
   end
 
 end
