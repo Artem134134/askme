@@ -27,7 +27,7 @@ class QuestionsController < ApplicationController
   end
 
   def index
-  	@question = Question.all
+  	@questions = Question.all
   end
 
 end
