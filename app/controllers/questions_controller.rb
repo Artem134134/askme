@@ -15,6 +15,9 @@ class QuestionsController < ApplicationController
   	  body: params[:question][:body],
   	  user_id: params[:question][:user_id]
   	)
+
+  	redirect_to question_path(@question)
+
   end
 
   def destroy
