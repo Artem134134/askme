@@ -1,5 +1,4 @@
 class QuestionsController < ApplicationController
-  skip_before_action :verify_authenticity_token
 
   def create 
   	question = Question.create(
@@ -32,6 +31,7 @@ class QuestionsController < ApplicationController
   end
 
   def new
+  	@question = Question.new
   end
 
 end
