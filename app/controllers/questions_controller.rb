@@ -1,10 +1,8 @@
 class QuestionsController < ApplicationController
 
-  def create 
-  	@question = Question.create(
-  	  body: params[:question][:body],
-  	  user_id: params[:question][:user_id]	
-  		)
+  def create
+  	question_params = params.require(:question).permit(:body,:user_id) 
+  	@question = Question.create(question_params)
 
   		redirect_to question_path(@question)
   end
