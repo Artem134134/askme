@@ -1,12 +1,12 @@
 class QuestionsController < ApplicationController
 
   def create 
-  	question = Question.create(
+  	@question = Question.create(
   	  body: params[:question][:body],
   	  user_id: params[:question][:user_id]	
   		)
 
-  		redirect_to question_path(question)
+  		redirect_to question_path(@question)
   end
 
   def update 
@@ -22,11 +22,14 @@ class QuestionsController < ApplicationController
 
   def destroy
   	@question = Question.find(params[:id])
-  	@question.destroy 	  
+  	@question.destroy 	
+
+  	 redirect_to questions_path 
   end
 
   def show
-  	@question = Question.find(params[:id])
+  	@question = Question.find(params[:id]) 	
+
   end
 
   def index
