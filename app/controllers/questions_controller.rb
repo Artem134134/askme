@@ -1,10 +1,10 @@
 class QuestionsController < ApplicationController
 
   def create
-  	question_params = params.require(:question).permit(:body,:user_id) 
+  
   	@question = Question.create(question_params)
 
-  		redirect_to question_path(@question)
+  	  redirect_to question_path(@question)
   end
 
   def update 
@@ -40,6 +40,13 @@ class QuestionsController < ApplicationController
 
   def edit
   	@question = Question.find(params[:id])
+  end
+
+  private
+
+  def question_params
+
+   params.require(:question).permit(:body,:user_id) 
   end
 
 end
