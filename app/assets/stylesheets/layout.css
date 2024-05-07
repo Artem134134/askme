@@ -6,11 +6,12 @@ body {
 
 .wrapper {
 	max-width: 800px;
-	margin: 40px;
+	margin: 20px;
 	width: 100%;
 }
 
 .container {
 	background:  #f8f8ff;
+	border-radius: 10px;
 	padding: 20px;
 }

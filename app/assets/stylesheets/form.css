@@ -1,5 +1,6 @@
 .form-text-area,
 .form-text-field {
+  border-radius: 3px;
   border: 1px solid #2f3e46;
   padding: 7.5px 10px;
 }
