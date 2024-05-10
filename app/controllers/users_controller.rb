@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   def new
+    session[:current_time] = Time.now
     @user = User.new
   end
 
@@ -8,6 +9,6 @@ class UsersController < ApplicationController
   
     User.create(user_params)
 
-    redirect_to root_path, notice: 'Вы успешно зарегистрировались'
+    redirect_to root_path, notice: 'Вы успешно зарегистрировались!'
   end
 end
