@@ -12,6 +12,22 @@
 
   <body>
     <div class="wrapper">
+      <div class="navbar">
+        <p class="title-sm text-bold">
+          <%= link_to 'Ask Me', root_path %>
+        </p>
+        <div>
+          <% if current_user.present? %>
+            <%= "@#{current_user.nickname}" %>
+          <% else %>
+          <%= link_to 'Зарегистрироваться', new_user_path, class: 'button button-yellow mr-sm' %>
+          <%= link_to 'Вход', new_session_path, class: 'button button-yellow' %>
+
+          <% end %>
+
+        </div>
+      </div>   
+
     <% if flash[:notice].present? %>
       <p class="mb mt message message-notice">
          <%= flash[:notice] %>      
@@ -25,6 +41,7 @@
 
 
        <%= yield %>
+      
     </div>
   </body>
 </html>
