@@ -5,7 +5,7 @@
 
 	<div class="mt">
 
-			<p><%= form_with scope: :session, url: session_path do |form| %></p>
+			<p><%= form_with scope: :session, url: session_path, data: {turbo: false} do |form| %></p>
 			
 			<p ><%= form.label :email %></p>
 			<p><%= form.text_field :email, class: 'form-text-field' %></p>
