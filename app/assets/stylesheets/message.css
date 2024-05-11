@@ -11,4 +11,5 @@
 .message-alert {
 	background-color: #ffd2d2;
 	border-color: #d00000;
+	border-radius: 5px;
 }

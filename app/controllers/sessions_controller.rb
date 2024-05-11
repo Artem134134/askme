@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
 
       redirect_to root_path, notice: 'Вы вошли на сайт'
     else
-      flash[:alert] = 'Неправильный email или пароль'
+      flash.now[:alert] = 'Неправильный email или пароль'
 
       render :new
     end
