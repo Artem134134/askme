@@ -6,6 +6,7 @@ class SessionsController < ApplicationController
     user_params = params.require(:session)
 
     user = User.find_by(email: user_params[:email])
+    user&.authenticate(user_params[:password])
 
     if user.present?
       session[:user_id] = user.id
