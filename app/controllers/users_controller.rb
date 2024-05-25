@@ -14,7 +14,7 @@ class UsersController < ApplicationController
       else
         flash.now[:alert] = 'Вы неправильно заполнили поля формы регистрации'
       
-        render :new
+        render :new 
       end
 
   end
