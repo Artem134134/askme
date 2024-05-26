@@ -1,7 +1,15 @@
-.fa_i {
+.fa_i_lg {
 	background-color: #e6e6fa;
 	border: 1px solid #c0c0c0;
 	border-radius: 10px;
-	font-size: 200%;
+	font-size: 200%;	
+}
+
+.fa_i_sm {
+	background-color: #e6e6fa;
+	border: 1px solid #c0c0c0;
+	border-radius: 5px;
+	display: inline-block;
+	font-size: 100%;	
 	
 }

@@ -9,18 +9,20 @@
 			<p class="mt"><%= form.label :nickname, 'Псевдоним' %></p>
 			<p><%= form.text_field :nickname, class: 'form-text-field' %></p>
 
-			<p class="mt-lg text-sm">Если вы не хотите изменять пароль - оставьте эти поля пустыми.</p>
-
 			<p class="mt"><%= form.label :password, 'Пароль' %></p>
 			<p><%= form.password_field :password, class: 'form-text-field' %></p>
 		
 			<p class="mt"><%= form.label :password_confirmation, 'Подтвердите пароль' %></p>
 			<p><%= form.password_field :password_confirmation, class: 'form-text-field' %></p>
 
+			<p class="mt-sm text-sm text-hex">Важно! Если вы не хотите изменять пароль - оставьте эти поля пустыми.</p>
+	
 			<p class="mt-lg">
-			<%= form.submit 'Сохранить', class: 'button button-main' %>
-			<span class="text-sm">или <%= link_to "вернуться", :back %></span></p>
+				<%= form.submit 'Сохранить', class: 'button button-main' %>
+		
+				<span class="text-sm"> или </span><%= link_to "вернуться", :back %>
+			</p>
 
-		<% end %>
+		<% end %> 
 	</div>
-</div>
+</div>  
