@@ -19,6 +19,18 @@ class UsersController < ApplicationController
     @user = User.find(params[:id]) 
   end
 
+  def update
+    @user = User.find(params[:id]) 
+
+    if @user.update(user_params)
+      redirect_to root_path, notice: 'Данные пользователя успешно обновлены.'
+    else
+      flash.now[:alert] = 'При попытке сохранить пользователя возникла ошибка!'      
+      render :edit 
+    end
+
+  end
+
   private
 
   def user_params
