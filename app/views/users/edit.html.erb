@@ -1,5 +1,14 @@
 <div class="container">
 	<h2 class="title">Редактирование пользователя</h2>
+	
+	<% if @user.errors.any? %>
+	<div class="mt">
+	  <% @user.errors.full_messages.each do |message| %>
+	    <p class="mb-sm text-red"><%= message %></p>
+	  <% end %>
+	</div><br> 
+	<% end %>
+
 	<div class="mt">
 		<%= form_with model: @user, data: {turbo: false} do |form| %>
 
@@ -22,7 +31,14 @@
 		
 				<span class="text-sm"> или </span><%= link_to "вернуться", :back %>
 			</p>
-
 		<% end %> 
+	</div>
+
+	<div class="mt-lg">
+		<%= button_to "Удалить профиль", user_path(@user), method: :delete,
+		form: {data: {turbo_confirm: "Вы хотите удалить свой профиль?"}}, class:'text-red text-sm' %>
+
+	</div>
+	
 	</div>
 </div>  

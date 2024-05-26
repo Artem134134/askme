@@ -28,7 +28,15 @@ class UsersController < ApplicationController
       flash.now[:alert] = 'При попытке сохранить пользователя возникла ошибка!'      
       render :edit 
     end
+  end
 
+  def destroy
+    @user = User.find(params[:id]) 
+    @user.destroy
+
+    session.delete(:user_id)
+
+    redirect_to root_path, notice: 'Пользователь удалён.'
   end
 
   private
