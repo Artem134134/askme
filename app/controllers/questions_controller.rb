@@ -2,9 +2,15 @@ class QuestionsController < ApplicationController
   before_action :set_quetion, only: %i[update show destroy edit]
   
   def create
-  	@question = Question.create(question_params)
+    @question = Question.new(question_params)
 
-  	redirect_to question_path(@question), notice: 'Новый вопрос создан!!!'
+    if @question.save
+      redirect_to question_path(@question), notice: 'Новый вопрос создан!!!'
+    else
+      flash.now[:alert] = 'Вы не заполнили поля формы   <<Текст вопроса>>  или <<ID пользователя>>'
+    
+      render :new
+    end
   end
 
   def update 
@@ -37,7 +43,7 @@ class QuestionsController < ApplicationController
   private
 
   def question_params
-   params.require(:question).permit(:body,:user_id) 
+   params.require(:question).permit(:body, :user_id) 
   end
 
   def set_quetion
