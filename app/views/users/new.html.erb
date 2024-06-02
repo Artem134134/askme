@@ -1,11 +1,11 @@
 <div class="container">
 	<h2 class="title">Присоединяйся и спрашивай!</h2>	
 
-<% if @user.errors.any? %>
+	<% if @user.errors.any? %>
 		<div class="mt">
 	  	<% @user.errors.full_messages.each do |message| %>
-	    <p class="mb-sm text-red"><%= message %></p>
-	  <% end %>
+	    	<p class="mb-sm text-red"><%= message %></p>
+			<% end %>
 		</div><br> 
 	<% end %>
 

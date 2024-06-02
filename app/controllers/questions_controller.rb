@@ -6,9 +6,9 @@ class QuestionsController < ApplicationController
 
     if @question.save
       redirect_to question_path(@question), notice: 'Новый вопрос создан!!!'
-    else
+    else 
       flash.now[:alert] = 'Вы не заполнили поля формы   <<Текст вопроса>>  или <<ID пользователя>>'
-    
+
       render :new
     end
   end
